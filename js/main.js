@@ -99,28 +99,30 @@ animatedElements.forEach(el => observer.observe(el));
 /* Contact Form Handling */
 const contactForm = document.querySelector('.contact-form');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    // Simulate form submission
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalBtnText = submitBtn.innerHTML;
+        // Simulate form submission
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
 
-    submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-    submitBtn.disabled = true;
-
-    setTimeout(() => {
-        submitBtn.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
-        submitBtn.style.backgroundColor = '#10b981'; // Success color
-        contactForm.reset();
+        submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.disabled = true;
 
         setTimeout(() => {
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.disabled = false;
-            submitBtn.style.backgroundColor = '';
-        }, 3000);
-    }, 1500);
-});
+            submitBtn.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
+            submitBtn.style.backgroundColor = '#10b981'; // Success color
+            contactForm.reset();
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                submitBtn.style.backgroundColor = '';
+            }, 3000);
+        }, 1500);
+    });
+}
 
 /* Typing Effect */
 const typingText = document.querySelector('.typing-text');
@@ -155,5 +157,5 @@ function type() {
 
 // Start typing effect if element exists
 if (typingText) {
-    document.addEventListener('DOMContentLoaded', type);
+    type();
 }
