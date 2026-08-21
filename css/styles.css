@@ -1069,3 +1069,20 @@ img {
         left: 21px;
     }
 }
+
+/* Typing cursor and text */
+.typing-text {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 6px;
+    color: var(--text-color);
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}

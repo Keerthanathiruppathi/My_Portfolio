@@ -155,7 +155,12 @@ function type() {
     }
 }
 
-// Start typing effect if element exists
+// Start typing effect if element exists — handle both pre- and post-DOM load
 if (typingText) {
-    type();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', type);
+    } else {
+        // DOM already ready, start immediately
+        type();
+    }
 }
