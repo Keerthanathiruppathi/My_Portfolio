@@ -1,17 +1,6 @@
 # Keerthana Thiruppathi - Portfolio
 
-A responsive personal portfolio website for Keerthana Thiruppathi, an aspiring software developer and AI/ML engineer.
-
-## Features
-
-- Responsive single-page portfolio layout
-- About, education, internship experience, skills, projects, and achievements sections
-- Light and dark theme toggle with saved preference
-- Animated Three.js background scene
-- Scroll progress indicator and back-to-top button
-- Mobile navigation menu
-- GitHub profile statistics and contribution graph
-- Font Awesome and Devicon icons
+A responsive personal portfolio website for myself, an aspiring software developer and AI/ML engineer.
 
 ## Built With
 
